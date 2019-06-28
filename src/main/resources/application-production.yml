@@ -4,7 +4,7 @@ spring:
     livereload:
       enabled: true
   datasource:
-    url: dbc:h2:/etc/jwt/db/jwtdb;auto_server=true
+    url: jdbc:h2:/etc/jwt/db/jwtdb;auto_server=true
     username: jwt
     password: jwt#prod
     hikari:
