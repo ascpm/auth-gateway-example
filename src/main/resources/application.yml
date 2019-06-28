@@ -1,0 +1,39 @@
+# spring
+spring:
+  application:
+    name: hofund-jwt
+
+  profiles:
+    active: local
+
+  messages:
+    basename: messages/web
+
+  datasource:
+    platform: h2
+    driver-class-name: org.h2.Driver
+    hikari:
+      pool-name: hikariJwt
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+
+  jpa:
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    properties:
+      hibernate:
+        show-sql: true
+        user_sql_comments: true
+        format_sql: true
+    open-in-view: false
+
+# server
+server:
+  use-forward-headers: true
+  tomcat:
+    remote-ip-header: X-Forwarded-For
+    protocol-header: X-Forwarded-Proto
+    port-header: X-Forwarded-Port

@@ -1,0 +1,32 @@
+apply plugin: "com.google.cloud.tools.jib"
+
+jib {
+    from {
+        image = project.baseDockerImage
+    }
+    to {
+        image = "${project.group}/${project.name}"
+        tags = [project.serviceVersion]
+        credHelper = "osxkeychain"
+    }
+    container {
+        useCurrentTimestamp = true
+        entrypoint = ['docker/entrypoint.sh']
+        ports = ['8100']
+        labels = [version: project.serviceVersion, name: project.name, group: project.group]
+    }
+    extraDirectories {
+        paths = file('src/main/jib')
+        permissions = ['/docker/entrypoint.sh': '755']
+    }
+}
+
+task copyWebAppIntoJib(type: Copy, group: "Docker", description: "Copy the JWT service into Docker image") {
+    dependsOn build
+    from "build/libs/${project.serviceWarName}"
+    into "src/main/jib/docker/jwt/war"
+}
+
+task deleteWebAppFromJib(type: Delete, group: "Docker", description: "Explodes the JWT service archive") {
+    delete "src/main/jib/docker/jwt"
+}

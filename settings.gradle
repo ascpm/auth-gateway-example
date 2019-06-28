@@ -1,0 +1,12 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+rootProject.name = 'jwt'
+
+include 'comm'
+include 'data'
+include 'business'
+include 'client'
+include 'web'

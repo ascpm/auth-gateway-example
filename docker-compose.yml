@@ -1,0 +1,6 @@
+version: '0.1.0'
+services:
+  jwt:
+    build: .
+    ports:
+      - "8100:8100"

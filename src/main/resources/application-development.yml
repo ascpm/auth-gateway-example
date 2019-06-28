@@ -1,0 +1,50 @@
+# spring
+spring:
+  devtools:
+    livereload:
+      enabled: true
+  datasource:
+    url: dbc:h2:/etc/jwt/db/jwtdb;auto_server=true
+    username: jwt
+    password: jwt#dev
+    hikari:
+      minimum-idle: 20
+      maximum-pool-size: 30
+    initialization-mode: never
+#    schema: classpath:data/schema-h2.sql
+#    data: classpath:data/data-h2.sql
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  pid:
+    file: /var/jwt/pid/jwt.pid
+
+server:
+  servlet:
+    context-path: '/jwt'
+    session:
+      cookie:
+        name: 'AUTH_GATEWAY_JWT_DEV_COOKIE'
+
+  port: 8100
+
+  tomcat:
+    uri-encoding: UTF-8
+
+# logging
+logging:
+  file: /var/jwt/log/jwt.log
+  path: /var/jwt/log
+  level:
+    root: info
+    org:
+      springframework: info
+      hibernate: info
+
+# kong
+kong:
+  baseUrl: 'http://kong:8001/consumers/'
+  credential:
+    createUri: '{consumer}/jwt'
+    deleteUri: '{consumer}/jwt/{id}'

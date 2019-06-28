@@ -1,0 +1,36 @@
+def explodedDir = "${buildDir}/jwt"
+
+task explodeWar(type: Copy, group: "build", description: "Explodes the JWT service archive") {
+    dependsOn build
+    from zipTree("build/libs/${project.serviceWarName}")
+    into explodedDir
+}
+
+task run(group: "build", description: "Run the JWT service in embedded container mode") {
+    dependsOn build
+    doLast {
+        def runArgs = Arrays.asList("-server -noverify -Xmx2048M".split(" "))
+        javaexec {
+            main = "-jar"
+            jvmArgs = runArgs
+            args = ["build/libs/${project.serviceWarName}"]
+        }
+    }
+}
+
+task debug(group: "build", description: "Debug the JWT service in embedded mode on port 5005") {
+    dependsOn build
+    doLast {
+        logger.info "Debugging process is started in a suspended state, listening on port 5005."
+        def jwtArgs = Arrays.asList("-Xmx2048M".split(" "))
+        javaexec {
+            main = "-jar"
+            jvmArgs = jwtArgs
+            debug = true
+            args = ["build/libs/${project.serviceWarName}"]
+        }
+    }
+}
+
+task allDependencies(group: "build", type: DependencyReportTask, description: "Display a graph of all project dependencies") {
+}

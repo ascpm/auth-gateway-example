@@ -1,0 +1,27 @@
+2019-06-28 15:02:40.698  INFO 2877 --- [main] com.ascpm.hofund.jwt.Application         : Starting Application on ASCPM-MAC.local with PID 2877 (/Users/ascpm/Workspaces/auth-gateway/hofund/jwt/build/libs/jwt.war started by ascpm in /Users/ascpm/Workspaces/auth-gateway/hofund/jwt)
+2019-06-28 15:02:40.702  INFO 2877 --- [main] com.ascpm.hofund.jwt.Application         : The following profiles are active: local
+2019-06-28 15:02:41.366  INFO 2877 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-28 15:02:41.410  INFO 2877 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36ms. Found 0 repository interfaces.
+2019-06-28 15:02:41.776  INFO 2877 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$55cbd090] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-28 15:02:42.194  INFO 2877 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8100 (http)
+2019-06-28 15:02:42.239  INFO 2877 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-28 15:02:42.240  INFO 2877 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-06-28 15:02:43.522  INFO 2877 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/jwt]    : Initializing Spring embedded WebApplicationContext
+2019-06-28 15:02:43.523  INFO 2877 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2768 ms
+2019-06-28 15:02:43.748  INFO 2877 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-28 15:02:43.826  INFO 2877 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-06-28 15:02:43.829  INFO 2877 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-28 15:02:44.000  INFO 2877 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-28 15:02:44.206  INFO 2877 --- [main] com.zaxxer.hikari.HikariDataSource       : hikariJwt - Starting...
+2019-06-28 15:02:44.393  INFO 2877 --- [main] com.zaxxer.hikari.HikariDataSource       : hikariJwt - Start completed.
+2019-06-28 15:02:44.405  INFO 2877 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-06-28 15:02:44.640  INFO 2877 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-28 15:02:44.884  INFO 2877 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-28 15:02:45.283  INFO 2877 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8100 (http) with context path '/jwt'
+2019-06-28 15:02:45.290  INFO 2877 --- [main] com.ascpm.hofund.jwt.Application         : Started Application in 10.084 seconds (JVM running for 10.638)
+2019-06-28 15:02:56.831  INFO 2877 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-06-28 15:02:56.833  INFO 2877 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-28 15:02:56.836  INFO 2877 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : hikariJwt - Shutdown initiated...
+2019-06-28 15:02:56.840  INFO 2877 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : hikariJwt - Shutdown completed.
